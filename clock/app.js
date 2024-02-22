@@ -1,4 +1,5 @@
 const deg = 6;
+const date = document.querySelector('#date');
 const hr = document.querySelector('#hr');
 const mn = document.querySelector('#mn');
 const sc = document.querySelector('#sc');
@@ -17,6 +18,9 @@ setInterval(() => {
     hr.style.transform = `rotateZ(${hh + mm / 12}deg)`;
     mn.style.transform = `rotateZ(${mm}deg)`;
     sc.style.transform = `rotateZ(${ss}deg)`;
+
+    let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    date.textContent = day.toLocaleDateString('en-US', options);
 
 
 }, 1000);
