@@ -6,7 +6,7 @@ body {
 
 .square {
     width: 30%;
-    /* backgroung-color: purle; */
+      background-color: beige;
     padding-bottom: 30%;
     float: left;
     margin: 1.66%;
@@ -22,7 +22,7 @@ h1 {
     text-transform: uppercase;
     line-height: 1.1;
     padding: 20px 0;
-
+background-color: steelblue;
 }
 
 #stripe {
