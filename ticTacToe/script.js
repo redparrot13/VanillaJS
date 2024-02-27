@@ -1,4 +1,4 @@
-
+/* still buggy.  not showing the correct winner */ 
 
 let currentPlayer = 'X'; 
 let gameBoard = ['', '', '', '', '', '', '', '', '']; 

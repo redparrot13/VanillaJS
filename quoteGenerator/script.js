@@ -1,3 +1,6 @@
+/* need to learn how to make the quotes loop through randomly untill all quotes are shown before repeating */ 
+
+
 let previousQuote = null;
 let previousFont = null;
 
@@ -69,7 +72,7 @@ function generateQuote() {
 
 
 
-
+// change fonts for each new quote
     const fonts = ["Arial, sans-serif", "Georgia, serif", "Verdana, sans-serif", "Courier New, monospace"];
     let randomFont = getRandomElement(fonts)
     while (randomFont === previousFont) {
