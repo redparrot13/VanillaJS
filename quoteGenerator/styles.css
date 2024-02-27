@@ -44,3 +44,11 @@ body {
 #generate:hover {
     background-color: #0056b3;
 }
+
+/* Media query for smaller screens */
+@media screen and (max-width: 200px) {
+    .container {
+        width: 75%; 
+        margin: auto; 
+    }
+}
