@@ -1,6 +1,6 @@
 const currentDate = new Date();
-//const targetDate = new Date('2024-03-20T00:01:00');
-const targetDate = new Date('2024-06-18T08:10:00');
+
+ const targetDate = new Date('2025-01-01T00:00:01');
 
 //console.log(targetDate)
 

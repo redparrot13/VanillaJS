@@ -47,7 +47,10 @@ body {
     text-transform: uppercase;
     font-size: larger;
 
-}
+} 
+
+
+
 
 @media (max-width: 600px) {
     #timer {
@@ -58,3 +61,5 @@ body {
         font-size: 1rem;
     }
 }
+
+
