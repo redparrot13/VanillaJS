@@ -1,9 +1,9 @@
 const currentDate = new Date();
 
- const targetDate = new Date('2025-01-01T00:00:01');
-
+ //const targetDate = new Date('2025-01-01T00:00:01');
+ const targetDate = new Date('2025-01-01T00:00:01')
 //console.log(targetDate)
-//tests
+
 const difference = targetDate - currentDate;
 
 
