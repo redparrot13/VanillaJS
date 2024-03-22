@@ -51,16 +51,82 @@ function playRound(playerChoice) {
 
 
 function concludeGame() {
-    let finalResult = '';
-    if(playerScore > computerScore) {
-        finalResult = 'Congratulations, you win the game!';
-    } else if  (playerScore < computerScore) {
-        finalResult = 'Game over, the computer has won';
+
+    const gameContainer = document.getElementById('rps-game');
+
+    const choices = document.getElementById('choices');
+    const gameInfo = document.getElementById('game-info');
+    const roundRes = document.getElementById('result');
+    if (choices) {
+        choices.style.display = 'none';
+    }
+
+    if (gameInfo) {
+        gameInfo.style.display = 'none';
+    }
+    if (roundRes) {
+        roundRes.style.display = 'none';
+    }
+
+
+    const gameConclusion = document.createElement('div');
+    gameConclusion.setAttribute('id', 'game-conclusion');
+
+
+    let finalMessage = '';
+    if (playerScore > computerScore) {
+        finalMessage = 'Congratulations, you win the game!';
+    } else if (playerScore < computerScore) {
+        finalMessage = 'Game over, the computer has won';
 
     } else {
-        finalResult = 'The game has ended, its a draw.';
+        finalMessage = 'The game has ended, its a draw.';
     }
-    resultDisplay.textContent = finalResult;
+
+    gameConclusion.innerHTML = `
+    <h2>Game Over</h2>
+    <p>${finalMessage}</p>
+    <p>Final Score - You: ${playerScore}  | Computer: ${computerScore}</p>
+    <button id="restart-btn">Restart Game</button>
+    `;
+
+    gameContainer.appendChild(gameConclusion);
+    document.getElementById('restart-btn').addEventListener('click', restartGame)
+}
+
+function restartGame() {
+    playerScore = 0;
+    computerScore = 0;
+    currentRound = 1;
+
+    playerScoreDisplay.textContent = 'Player Score: 0';
+    computerScoreDisplay.textcontent = 'Computer Score: 0';
+    roundDisplay.textContent = `Round: 1 of ${totalRounds}`;
+    
+    const choices = document.getElementById('choices');
+    const gameInfo = document.getElementById('game-info');
+    const roundRes = document.getElementById('result');
+
+    if(choices) {
+        choices.style.display = '';
+    }
+
+    if (gameInfo) {
+        gameInfo.style.display = '';
+    }
+
+    if (roundRes){
+        roundRes.style.display = '';
+    }
+
+    const gameConclusion = document.getElementById('game-conclusion');
+    if (gameConclusion) {
+        gameConclusion.remove();
+    }
+
+    document.getElementById('choices').style.display = '';
+    resultDisplay.textContent = 'Choose your weapon!';
+
 }
 
 
