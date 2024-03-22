@@ -20,6 +20,8 @@ function playRound(playerChoice) {
     if (currentRound <= totalRounds) {
         const choices = ['rock', 'paper', 'scissors'];
         const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+
+       
         //determine the winner, update resultDisplay
 
         if (playerChoice === computerChoice) {
@@ -37,7 +39,9 @@ function playRound(playerChoice) {
             computerScore++;
         }
 
-        // test for the logic  console.log(computerChoice, playerChoice);
+        //console.log("Player choice:", playerChoice);
+        //console.log("Computer choice:", computerChoice);
+         
         playerScoreDisplay.textContent = `Player Score: ${playerScore}`;
         computerScoreDisplay.textContent = `Computer Score: ${computerScore}`;
 
@@ -45,8 +49,10 @@ function playRound(playerChoice) {
         currentRound++
     }
     if (currentRound > totalRounds) {
+       
         concludeGame();
     }
+    //console.log("Round result:", resultDisplay.textContent);
 }
 
 
