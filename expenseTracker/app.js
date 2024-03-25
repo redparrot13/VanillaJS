@@ -4,10 +4,11 @@ const textInput = document.getElementById('text');
 const amountInput = document.getElementById('amount');
 const categoryInput = document.getElementById('category');
 const expensesList = document.getElementById('expenses');
+const resetButton = document.getElementById('reset-btn');
 
 let totalBalance = 0;
 
-//to display balance
+//to update the display balance
 function updateBalance() {
     balance.textContent = totalBalance.toFixed(2);
 }
@@ -45,8 +46,13 @@ function removeExpense(expenseItem, amount) {
     expenseItem.remove();
     totalBalance -= amount;
     updateBalance();
+}
 
-  
+//function to reset the tracker
+function resetExpenses() {
+    totalBalance = 0;
+    expensesList.innerHTML = '';
+    updateBalance();
 }
 
 
@@ -74,6 +80,11 @@ categoryInput.addEventListener('keypress', function (e) {
         e.preventDefault();
         expenseForm.dispatchEvent(new Event('submit'));
     }
+});
+
+//to reset tracker
+resetButton.addEventListener('click' , function () {
+    resetExpenses();
 });
 
 
