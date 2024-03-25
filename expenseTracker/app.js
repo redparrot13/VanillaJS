@@ -11,6 +11,7 @@ let totalBalance = 0;
 //to update the display balance
 function updateBalance() {
     balance.textContent = totalBalance.toFixed(2);
+    //console.log('Balance updated:', totalBalance.toFixed(2));
 }
 
 //to add new expense
@@ -30,6 +31,7 @@ function addExpense(description, amount, category) {
     expensesList.appendChild(expense);
     totalBalance += amount;
     updateBalance();
+    console.log('Expense added:', {description, amount, category});
 
     //delete 
     const deleteBtn = expense.querySelector('.delete-btn');
@@ -46,6 +48,7 @@ function removeExpense(expenseItem, amount) {
     expenseItem.remove();
     totalBalance -= amount;
     updateBalance();
+    /* console.log('Expense removed:', { description: expenseItem.querySelector('.description').textContent, amount: amount, category: expenseItem.querySelector('.category').textContent }); */
 }
 
 //function to reset the tracker
@@ -53,6 +56,7 @@ function resetExpenses() {
     totalBalance = 0;
     expensesList.innerHTML = '';
     updateBalance();
+    //console.log('Tracker reset')
 }
 
 
@@ -85,6 +89,7 @@ categoryInput.addEventListener('keypress', function (e) {
 //to reset tracker
 resetButton.addEventListener('click' , function () {
     resetExpenses();
+    //console.log('Reset button clicked');
 });
 
 
