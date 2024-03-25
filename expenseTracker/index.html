@@ -13,6 +13,17 @@
         <form id="expense-form">
             <input type="text" id="text" placeholder="Expense Description" required>
             <input type="number " id="amount" placeholder="Amount" required>
+            <select id="category">
+                <option value="uncategorized">Uncategorized</option>
+                <option value="housing">Housing</option>
+                <option value="food">Food & Dining</option>
+                <option value="transportation">Transportation</option>
+                <option value="bills">Bills & Utilities</option>
+                <option value="health">Health & Wellness</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="gifts">Gifts</option>
+
+            </select>
             <button type="submit">Add Expense</button>
         </form>
         <div id="expenses"></div>
