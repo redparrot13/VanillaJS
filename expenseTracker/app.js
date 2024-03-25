@@ -7,18 +7,17 @@ const expensesList = document.getElementById('expenses');
 
 let totalBalance = 0;
 
-
 //to display balance
 function updateBalance() {
     balance.textContent = totalBalance.toFixed(2);
 }
-
 
 //to add new expense
 function addExpense(description, amount, category) {
     if (category === 'uncategorized') {
         category = 'Uncategorized'
     }
+
     const expense = document.createElement('div');
     expense.classList.add('expense');
     expense.innerHTML = `
@@ -36,14 +35,29 @@ function addExpense(description, amount, category) {
     deleteBtn.addEventListener('click', function () {
         removeExpense(expense, amount);
     });
+
+   
+} 
+
+
+// function to remove expense item
+function removeExpense(expenseItem, amount) {
+    expenseItem.remove();
+    totalBalance -= amount;
+    updateBalance();
+
+  
 }
+
+
+// EVENT LISTENERS: 
 
 //for expense form submission 
 expenseForm.addEventListener('submit', function (e) {
     e.preventDefault();
     const description = textInput.value.trim();
     const amount = parseFloat(amountInput.value);
-    const category = categoryInput.value; 
+    const category = categoryInput.value;
     if (description !== '' && !isNaN(amount) && amount > 0) {
         addExpense(description, amount, category);
         textInput.value = '';
@@ -54,11 +68,13 @@ expenseForm.addEventListener('submit', function (e) {
     }
 });
 
-// remove function
-function removeExpense(expenseItem, amount) {
-    expenseItem.remove();
-    totalBalance -= amount;
-    updateBalance();
-}
+// for key press on category 
+categoryInput.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        expenseForm.dispatchEvent(new Event('submit'));
+    }
+});
+
 
 
