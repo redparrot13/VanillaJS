@@ -13,10 +13,10 @@ const fetchPokemon = () => {
     Promise.all(promises).then( results => {
         const pokemon = results.map( (data) => ({
 
-            name: data.name,
+            name: data.name, 
             id: data.id,
             image: data.sprites['front_default'],
-            type: data.types.map(type => type.type.name).join(', ')
+            type: data.types.map(type => type.type.name).join(' , ')
 
         }));
 
