@@ -1,0 +1,18 @@
+.grid { 
+
+    display:flex;
+    flex-wrap: wrap;
+    
+    width:499px;
+    padding: 5px;
+    border: solid grey 5px;
+    
+}
+
+.grid img {
+    margin: 10px;
+}
+
+h3{
+    
+}
