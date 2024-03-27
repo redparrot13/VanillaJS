@@ -1,18 +1,57 @@
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+}
+.container {
+    text-align: center;
+}
+
+h3{
+    margin-top: 0;
+}
 .grid { 
 
     display:flex;
     flex-wrap: wrap;
-    
+    justify-content: space-around;
     width:499px;
     padding: 5px;
     border: solid grey 5px;
+    border-radius: 8px;
+    background-color: black;
     
 }
 
 .grid img {
     margin: 10px;
+    border-radius: 8px;
 }
 
-h3{
-    
+#messageDisplay {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+    color: #333; 
 }
+
+
+#resetBtn {
+    display: block;
+    margin: 20px auto; 
+    padding: 10px 20px; 
+    font-size: 16px;
+    background-color: black;
+    color: #fff; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+#resetBtn:hover {
+    background-color: #0056b3; 
+}
+
+
+

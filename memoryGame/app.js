@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
     ]
 
+    
     cardArray.sort(() => 0.5 - Math.random())
 
 
@@ -93,8 +94,9 @@ document.addEventListener('DOMContentLoaded', () => {
         cardsChosenId = []
         resultDisplay.textContent = cardsWon.length
         if (cardsWon.length === cardArray.length / 2) {
-            resultDisplay.textContent = 'Contrats, you found all the matches!'
-
+            resultDisplay.textContent = 'Contrats, you found all the matches!';
+            
+        
         }
     }
 
@@ -105,11 +107,13 @@ document.addEventListener('DOMContentLoaded', () => {
     //flip card
     function flipCard() {
         var cardId = this.getAttribute('data-id');
+      //console.log('Card flipped. Id: ', cardId)
         cardsChosen.push(cardArray[cardId].name);
         cardsChosenId.push(cardId);
+       
         this.setAttribute('src', cardArray[cardId].img)
         if (cardsChosen.length === 2) {
-            setTimeout(checkForMatch, 500)
+            setTimeout(checkForMatch, 750)
         }
     }
 
