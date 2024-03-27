@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-
     //card options
     const cardArray = [
         {
@@ -53,16 +52,12 @@ document.addEventListener('DOMContentLoaded', () => {
         },
     ]
 
-    
     cardArray.sort(() => 0.5 - Math.random())
-
-
     const grid = document.querySelector('.grid');
     const resultDisplay = document.querySelector('#result')
     var cardsChosen = [];
     var cardsChosenId = [];
     var cardsWon = [];
-
 
     //create game board 
     function createBoard() {
@@ -95,14 +90,8 @@ document.addEventListener('DOMContentLoaded', () => {
         resultDisplay.textContent = cardsWon.length
         if (cardsWon.length === cardArray.length / 2) {
             resultDisplay.textContent = 'Contrats, you found all the matches!';
-            
-        
         }
     }
-
-
-
-
 
     //flip card
     function flipCard() {
@@ -117,10 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-
     createBoard()
-
-
 
     //event listener to reset game
     document.getElementById('resetBtn').addEventListener('click', resetGame)
